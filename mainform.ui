@@ -6,46 +6,17 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1392</width>
-    <height>712</height>
+    <width>1403</width>
+    <height>741</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainForm</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QComboBox{
-font: 14pt &quot;WenQuanYi Micro Hei&quot;;
-border-radius: 8px;
-padding: 1px 10px 1px 10px;
-border: 1px solid #4D4D4D;
-}
-QComboBox QAbstractItemView{
-background-color:#4D4D4D;
-color:white;
-selection-background-color: rgb(56,117,215);
-}
-QComboBox::drop-down {
-subcontrol-origin: padding;
-subcontrol-position: top right;
-width: 20px;
-border-left-width: 1px;
-border-left-style: solid;
-border-top-right-radius: 3px;
-border-bottom-right-radius: 3px;
-border-left-color: #4D4D4D;
-}
-QComboBox::down-arrow{
-image: url(:/image/images/arrow_down.png);
-}
-QComboBox::down-arrow:pressed{
-position:relative;
-top:1px;
-left:1px;
-}
-</string>
+   <string notr="true"/>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_7">
+  <layout class="QVBoxLayout" name="verticalLayout_11">
    <property name="leftMargin">
     <number>0</number>
    </property>
@@ -59,11 +30,11 @@ left:1px;
     <number>0</number>
    </property>
    <item>
-    <widget class="QWidget" name="TitleBarWidget" native="true">
+    <widget class="QWidget" name="widget_title" native="true">
      <property name="minimumSize">
       <size>
        <width>0</width>
-       <height>80</height>
+       <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
@@ -90,13 +61,13 @@ left:1px;
         <property name="minimumSize">
          <size>
           <width>120</width>
-          <height>80</height>
+          <height>50</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
           <width>16777215</width>
-          <height>16777215</height>
+          <height>80</height>
          </size>
         </property>
         <property name="text">
@@ -104,7 +75,7 @@ left:1px;
         </property>
         <property name="icon">
          <iconset resource="image.qrc">
-          <normaloff>:/image/images/dribbble.png</normaloff>:/image/images/dribbble.png</iconset>
+          <normaloff>:/image/flow_chart.png</normaloff>:/image/flow_chart.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -128,13 +99,13 @@ left:1px;
         <property name="minimumSize">
          <size>
           <width>120</width>
-          <height>80</height>
+          <height>50</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
           <width>16777215</width>
-          <height>16777215</height>
+          <height>80</height>
          </size>
         </property>
         <property name="text">
@@ -142,7 +113,7 @@ left:1px;
         </property>
         <property name="icon">
          <iconset resource="image.qrc">
-          <normaloff>:/image/images/person_manager.png</normaloff>:/image/images/person_manager.png</iconset>
+          <normaloff>:/image/contact_card.png</normaloff>:/image/contact_card.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -166,13 +137,13 @@ left:1px;
         <property name="minimumSize">
          <size>
           <width>120</width>
-          <height>80</height>
+          <height>50</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
           <width>16777215</width>
-          <height>16777215</height>
+          <height>80</height>
          </size>
         </property>
         <property name="text">
@@ -180,7 +151,7 @@ left:1px;
         </property>
         <property name="icon">
          <iconset resource="image.qrc">
-          <normaloff>:/image/images/video_camera.png</normaloff>:/image/images/video_camera.png</iconset>
+          <normaloff>:/image/camera_identification.png</normaloff>:/image/camera_identification.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -204,13 +175,13 @@ left:1px;
         <property name="minimumSize">
          <size>
           <width>120</width>
-          <height>80</height>
+          <height>50</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
           <width>16777215</width>
-          <height>16777215</height>
+          <height>80</height>
          </size>
         </property>
         <property name="text">
@@ -218,7 +189,7 @@ left:1px;
         </property>
         <property name="icon">
          <iconset resource="image.qrc">
-          <normaloff>:/image/images/search.png</normaloff>:/image/images/search.png</iconset>
+          <normaloff>:/image/search.png</normaloff>:/image/search.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -242,13 +213,13 @@ left:1px;
         <property name="minimumSize">
          <size>
           <width>120</width>
-          <height>80</height>
+          <height>50</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
           <width>16777215</width>
-          <height>16777215</height>
+          <height>80</height>
          </size>
         </property>
         <property name="text">
@@ -256,7 +227,7 @@ left:1px;
         </property>
         <property name="icon">
          <iconset resource="image.qrc">
-          <normaloff>:/image/images/settings.png</normaloff>:/image/images/settings.png</iconset>
+          <normaloff>:/image/settings.png</normaloff>:/image/settings.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -301,13 +272,13 @@ left:1px;
           <number>9</number>
          </property>
          <property name="topMargin">
-          <number>2</number>
+          <number>0</number>
          </property>
          <property name="rightMargin">
           <number>9</number>
          </property>
          <property name="bottomMargin">
-          <number>2</number>
+          <number>0</number>
          </property>
          <item>
           <widget class="QLabel" name="Date">
@@ -338,7 +309,7 @@ left:1px;
    <item>
     <widget class="QStackedWidget" name="stackedWidget">
      <property name="currentIndex">
-      <number>4</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="Empty"/>
      <widget class="QWidget" name="CompanyManager">
@@ -527,11 +498,6 @@ left:1px;
            <item>
             <property name="text">
              <string>卡号</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>未绑定人员</string>
             </property>
            </item>
           </widget>

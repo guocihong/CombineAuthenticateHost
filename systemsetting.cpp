@@ -7,8 +7,10 @@ SystemSetting::SystemSetting(QWidget *parent) :
     ui(new Ui::SystemSetting)
 {
     ui->setupUi(this);
-    this->setWindowFlags(Qt::FramelessWindowHint);
-    ui->label_title->installEventFilter(this);
+    this->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowSystemMenuHint);
+    this->setProperty("Form",true);
+    ui->lab_Title->installEventFilter(this);
+    IconHelper::Instance()->SetIcon(ui->lab_Ico, QChar(0xf1a5),14);
 
     connect(ui->ServerIP,SIGNAL(textChanged(QString)),this,SLOT(slotChangeButtonState(QString)));
     connect(ui->ServerListenPort,SIGNAL(textChanged(QString)),this,SLOT(slotChangeButtonState(QString)));
@@ -100,7 +102,7 @@ void SystemSetting::slotChangeButtonState(QString str)
 bool SystemSetting::eventFilter(QObject *obj, QEvent *event)
 {
     QMouseEvent *MouseEvent = static_cast<QMouseEvent*>(event);
-    if(obj == ui->label_title){
+    if(obj == ui->lab_Title){
         if(MouseEvent->buttons() == Qt::LeftButton){
             if(event->type() == QEvent::MouseButtonPress){
                 mousePressed = true;

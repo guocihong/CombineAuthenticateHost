@@ -11,6 +11,7 @@ SearchUnbindPersonInfo::SearchUnbindPersonInfo(QWidget *parent) :
     ui->setupUi(this);
     this->setWindowFlags(Qt::FramelessWindowHint);
     setAttribute(Qt::WA_DeleteOnClose);
+    IconHelper::Instance()->SetIcon(ui->label_Ico, QChar(0xf1a5),14);
 
     manager = new QNetworkAccessManager(this);
     connect(manager,SIGNAL(finished(QNetworkReply*)),
@@ -34,7 +35,7 @@ void SearchUnbindPersonInfo::on_btnClose_clicked()
 
 void SearchUnbindPersonInfo::SetWindowTitle(QString title)
 {
-    ui->label_title->setText(title);
+    ui->lab_Title->setText(title);
 }
 
 void SearchUnbindPersonInfo::SetData(QString DeviceNumber)
@@ -61,7 +62,7 @@ void SearchUnbindPersonInfo::on_btnSearchPersonInfo_clicked()
     reply = manager->get(QNetworkRequest(getBinding));
     ui->PersonMainInfoTableWidget->clearContents();
     ui->PersonMainInfoTableWidget->setRowCount(0);
-    qDebug() << getBinding;
+//    qDebug() << getBinding;
 }
 
 void SearchUnbindPersonInfo::on_btnAdd_clicked()
@@ -103,7 +104,7 @@ void SearchUnbindPersonInfo::slotReplyFinished(QNetworkReply *reply)
     if(reply->error() == QNetworkReply::NoError){
         QTextCodec *codec = QTextCodec::codecForName("UTF-8");
         QString JsonData = codec->toUnicode(reply->readAll());
-        qDebug() << JsonData;
+//        qDebug() << JsonData;
 
         Json::Reader JsonReader;
         Json::Value JsonValue;
@@ -180,9 +181,6 @@ void SearchUnbindPersonInfo::tableWidgetSetting(QTableWidget *tableWidget, QStri
     //去除表头的移动
     tableWidget->horizontalHeader()->setMovable(false);
 
-    //设置交替行颜色选项
-    tableWidget->setAlternatingRowColors(true);
-
     //使列完全填充并平分
     tableWidget->horizontalHeader()->setResizeMode(mode);
     //        tableWidget->horizontalHeader()->setResizeMode(QHeaderView::ResizeToContents);
@@ -193,17 +191,13 @@ void SearchUnbindPersonInfo::tableWidgetSetting(QTableWidget *tableWidget, QStri
 
     //表格表头的显示与隐藏
     tableWidget->horizontalHeader()->setVisible(true);
-    tableWidget->verticalHeader()->setVisible(isVisibleVerticalHeader);
-
-    //所有单元格设置字体和字体大小
-    tableWidget->setFont(QFont(tr("WenQuanYi Micro Hei"),14));
+    tableWidget->verticalHeader()->setVisible(isVisibleVerticalHeader);    
 
     //设置水平表头所有列的对齐方式和字体
     for(int i = 0; i < tableWidget->columnCount(); i++){
         QTableWidgetItem *horizontalHeaderItem =
                 tableWidget->horizontalHeaderItem(i);
-        horizontalHeaderItem->setTextAlignment(Qt::AlignVCenter | Qt::AlignHCenter);
-        horizontalHeaderItem->setFont(QFont(tr("WenQuanYi Micro Hei"),14));
+        horizontalHeaderItem->setTextAlignment(Qt::AlignVCenter | Qt::AlignHCenter);        
     }
 }
 

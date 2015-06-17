@@ -9,7 +9,7 @@ CompanyRegister::CompanyRegister(QWidget *parent) :
     ui->setupUi(this);
     this->setWindowFlags(Qt::FramelessWindowHint);
     setAttribute(Qt::WA_DeleteOnClose);
-    ui->label_title->installEventFilter(this);
+    ui->lab_Title->installEventFilter(this);
 }
 
 CompanyRegister::~CompanyRegister()
@@ -24,13 +24,13 @@ void CompanyRegister::on_btnClose_clicked()
 
 void CompanyRegister::SetWindowTitle(QString title)
 {
-    ui->label_title->setText(title);
+    ui->lab_Title->setText(title);
 }
 
 bool CompanyRegister::eventFilter(QObject *obj, QEvent *event)
 {
     QMouseEvent *MouseEvent = static_cast<QMouseEvent*>(event);
-    if(obj == ui->label_title){
+    if(obj == ui->lab_Title){
         if(MouseEvent->buttons() == Qt::LeftButton){
             if(event->type() == QEvent::MouseButtonPress){
                 mousePressed = true;

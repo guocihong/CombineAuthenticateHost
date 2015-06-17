@@ -9,7 +9,7 @@ DeviceAdd::DeviceAdd(QWidget *parent) :
     ui->setupUi(this);
     this->setWindowFlags(Qt::FramelessWindowHint);
     setAttribute(Qt::WA_DeleteOnClose);
-    ui->label_title->installEventFilter(this);
+    ui->lab_Title->installEventFilter(this);
 }
 
 DeviceAdd::~DeviceAdd()
@@ -24,13 +24,13 @@ void DeviceAdd::on_btnClose_clicked()
 
 void DeviceAdd::SetWindowTitle(QString title)
 {
-    ui->label_title->setText(title);
+    ui->lab_Title->setText(title);
 }
 
 bool DeviceAdd::eventFilter(QObject *obj, QEvent *event)
 {
     QMouseEvent *MouseEvent = static_cast<QMouseEvent*>(event);
-    if(obj == ui->label_title){
+    if(obj == ui->lab_Title){
         if(MouseEvent->buttons() == Qt::LeftButton){
             if(event->type() == QEvent::MouseButtonPress){
                 mousePressed = true;

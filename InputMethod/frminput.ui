@@ -88,7 +88,7 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <property name="minimumSize">
            <size>
             <width>101</width>
-            <height>0</height>
+            <height>30</height>
            </size>
           </property>
           <property name="focusPolicy">
@@ -107,7 +107,7 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <property name="minimumSize">
            <size>
             <width>101</width>
-            <height>0</height>
+            <height>30</height>
            </size>
           </property>
           <property name="focusPolicy">
@@ -126,7 +126,7 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <property name="minimumSize">
            <size>
             <width>101</width>
-            <height>0</height>
+            <height>30</height>
            </size>
           </property>
           <property name="focusPolicy">
@@ -407,6 +407,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
@@ -422,6 +428,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
         </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
@@ -439,6 +451,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
@@ -454,6 +472,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
         </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
@@ -471,6 +495,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
@@ -486,6 +516,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
         </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
@@ -503,6 +539,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
@@ -518,6 +560,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
         </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
@@ -535,6 +583,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
@@ -550,6 +604,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
         </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
@@ -567,6 +627,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
@@ -583,6 +649,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
@@ -598,6 +670,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
         </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
@@ -631,6 +709,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
@@ -646,6 +730,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
         </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
@@ -663,6 +753,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
@@ -678,6 +774,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
         </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
@@ -695,6 +797,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
@@ -710,6 +818,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
         </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
@@ -727,6 +841,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
@@ -742,6 +862,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
         </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
@@ -759,6 +885,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
@@ -774,6 +906,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
         </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
@@ -791,6 +929,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
@@ -806,6 +950,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
         </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
@@ -823,6 +973,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
@@ -838,6 +994,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
         </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
@@ -855,6 +1017,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
@@ -870,6 +1038,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
         </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
@@ -887,6 +1061,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
@@ -902,6 +1082,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
         </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
@@ -919,6 +1105,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
@@ -934,6 +1126,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
         </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
@@ -951,6 +1149,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
@@ -966,6 +1170,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
         </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
@@ -983,6 +1193,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
@@ -998,6 +1214,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
         </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
@@ -1015,6 +1237,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
@@ -1030,6 +1258,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
         </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
@@ -1047,6 +1281,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
@@ -1062,6 +1302,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
         </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
@@ -1079,6 +1325,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
@@ -1094,6 +1346,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
         </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
@@ -1111,6 +1369,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
@@ -1126,6 +1390,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
         </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
@@ -1143,6 +1413,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
@@ -1158,6 +1434,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
         </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
@@ -1175,6 +1457,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
@@ -1190,6 +1478,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
         </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
@@ -1207,6 +1501,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
@@ -1222,6 +1522,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
         </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
@@ -1239,6 +1545,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
@@ -1254,6 +1566,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
         </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
@@ -1271,6 +1589,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
@@ -1286,6 +1610,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
         </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
@@ -1303,6 +1633,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
@@ -1318,6 +1654,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
         </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
@@ -1335,6 +1677,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
@@ -1350,6 +1698,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
         </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
@@ -1367,6 +1721,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
@@ -1383,6 +1743,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
@@ -1398,6 +1764,12 @@ font: 18pt &quot;WenQuanYi Micro Hei&quot;;
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
         </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>

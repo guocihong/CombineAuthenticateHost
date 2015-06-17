@@ -27,7 +27,9 @@ SOURCES += main.cpp\
     searchunbindpersoninfo.cpp \
     MessageDialog/messagedialog.cpp \
     InputMethod/frminput.cpp \
-    systemsetting.cpp
+    systemsetting.cpp \
+    iconhelper.cpp \
+    app.cpp
 
 HEADERS  += mainform.h \
     companyregister.h \
@@ -46,7 +48,10 @@ HEADERS  += mainform.h \
     searchunbindpersoninfo.h \
     MessageDialog/messagedialog.h \
     InputMethod/frminput.h \
-    systemsetting.h
+    systemsetting.h \
+    iconhelper.h \
+    app.h \
+    myhelper.h
 
 FORMS    += mainform.ui \
     companyregister.ui \
@@ -58,6 +63,8 @@ FORMS    += mainform.ui \
     InputMethod/frminput.ui \
     systemsetting.ui
 
+INCLUDEPATH += $$PWD
+
 RC_FILE=main.rc
 
 DESTDIR=bin
@@ -67,9 +74,7 @@ UI_DIR=temp/ui
 OBJECTS_DIR=temp/obj
 
 RESOURCES += \
-    image.qrc \
-    qm.qrc \
-    qss.qrc
+    image.qrc
 
 OTHER_FILES += \
     json/sconscript

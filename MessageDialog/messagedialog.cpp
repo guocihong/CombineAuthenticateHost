@@ -4,6 +4,7 @@
 #include <QMouseEvent>
 #include <QKeyEvent>
 #include <QLayout>
+#include "iconhelper.h"
 
 MessageDialog::MessageDialog(enum MsgType MsgTypeFlag, QString text, QWidget *parent) :
     QDialog(parent),
@@ -12,25 +13,26 @@ MessageDialog::MessageDialog(enum MsgType MsgTypeFlag, QString text, QWidget *pa
     ui->setupUi(this);
     this->setWindowFlags(Qt::FramelessWindowHint);
     layout()->setSizeConstraint(QLayout::SetFixedSize);
+    IconHelper::Instance()->SetIcon(ui->lab_Ico, QChar(0xf1a5),14);
 
     if(MsgTypeFlag == MessageDialog::information){
-        ui->label_title->setText(tr("提示"));
-        ui->label_info_icon->setStyleSheet(tr("border-image:url(:/image/images/information.png)"));
+        ui->lab_Title->setText(tr("提示"));
+        ui->label_info_icon->setStyleSheet(tr("border-image:url(:/image/information.png)"));
         ui->btnCancel->setVisible(false);
     }else if(MsgTypeFlag == MessageDialog::critical){
-        ui->label_title->setText(tr("错误"));
-        ui->label_info_icon->setStyleSheet(tr("border-image:url(:/image/images/critical.png)"));
+        ui->lab_Title->setText(tr("错误"));
+        ui->label_info_icon->setStyleSheet(tr("border-image:url(:/image/critical.png)"));
         ui->btnCancel->setVisible(false);
     }else if(MsgTypeFlag == MessageDialog::question){
-        ui->label_title->setText(tr("询问"));
-        ui->label_info_icon->setStyleSheet(tr("border-image:url(:/image/images/question.png)"));
+        ui->lab_Title->setText(tr("询问"));
+        ui->label_info_icon->setStyleSheet(tr("border-image:url(:/image/question.png)"));
         ui->btnCancel->setVisible(true);
     }
 
     ui->label_info->setText(text);
 
     this->installEventFilter(this);
-    ui->label_title->installEventFilter(this);
+    ui->lab_Title->installEventFilter(this);
 }
 
 MessageDialog::~MessageDialog()
@@ -53,7 +55,7 @@ void MessageDialog::on_btnCancel_clicked()
 bool MessageDialog::eventFilter(QObject *obj, QEvent *event)
 {
     QMouseEvent *MouseEvent = static_cast<QMouseEvent*>(event);
-    if(obj == ui->label_title){
+    if(obj == ui->lab_Title){
         if(MouseEvent->buttons() == Qt::LeftButton){
             if(event->type() == QEvent::MouseButtonPress){
                 mousePressed = true;

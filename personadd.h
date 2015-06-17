@@ -22,7 +22,7 @@ public:
 
 private slots:
     void slotReplyFinished(QNetworkReply *);
-    void on_FunctionTypeFilterComboBox_currentIndexChanged(int index);
+    void slotFunctionTypeFilterComboBoxCurrentIndexChanged(int index);
 
     void on_btnClose_clicked();
     void on_btnQuery_clicked();
@@ -35,8 +35,10 @@ protected:
 signals:
     void signalControlStateEnable();
 
-private:
+public:
     Ui::PersonAdd *ui;
+
+    bool isOver;
 
     enum OperatorType{
         GetBasicInfo,

@@ -77,23 +77,13 @@
 //#include <linux/videodev2.h>
 //#include <errno.h>
 //#include <sys/mman.h>
-
+#include "iconhelper.h"
 
 class CommonSetting : public QObject
 {
 public:
     CommonSetting();
     ~CommonSetting();
-
-    //设置编码为GB2312
-    static void SetGB2312Code()
-    {
-        QTextCodec *codec =
-                QTextCodec::codecForName("GB2312");
-        QTextCodec::setCodecForLocale(codec);
-        QTextCodec::setCodecForCStrings(codec);
-        QTextCodec::setCodecForTr(codec);
-    }
 
     //设置编码为UTF8
     static void SetUTF8Code()
@@ -106,15 +96,15 @@ public:
     }
 
     //设置全局样式
-    static void SetCustomStyle()
+    static void SetCustomStyle(QString qssFile)
     {
-        QString qss;
-        QFile qssFile(":/qss/black.qss");
-        qssFile.open(QFile::ReadOnly);
-        if(qssFile.isOpen()){
-            qss = QLatin1String(qssFile.readAll());
+        QFile file(qssFile);
+        if (file.open(QFile::ReadOnly)) {
+            QString qss = QLatin1String(file.readAll());
             qApp->setStyleSheet(qss);
-            qssFile.close();
+            QString PaletteColor = qss.mid(20, 7);
+            qApp->setPalette(QPalette(QColor(PaletteColor)));
+            file.close();
         }
     }
 
@@ -122,17 +112,10 @@ public:
     {
         //加载Qt中的资源文件，使Qt显示中文（包括QMessageBox、文本框右键菜单等）
         QTranslator translator;
-        translator.load(":/qm/qt_zh_CN.qm");
+        translator.load(":/image/qt_zh_CN.qm");
         qApp->installTranslator(&translator);
     }
 
-    static void InstallInputMethod()
-    {
-        //整个应用程序加入输入法
-//        MyInputPanelContext *ic = new MyInputPanelContext;
-//        qApp->setInputContext(ic);
-//        qApp->setStyle(new MyProxyStyle);//点击一次就弹出软键盘，不然如果窗口部件没有获得焦点，则需要点击两次，第一次获得焦点，第二次弹出软键
-    }
 
     //延时处理
     static void DelayMs(int msc)

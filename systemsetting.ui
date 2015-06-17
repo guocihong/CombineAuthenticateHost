@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>616</width>
-    <height>384</height>
+    <width>488</width>
+    <height>286</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -26,52 +26,26 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QComboBox{
-font: 14pt &quot;WenQuanYi Micro Hei&quot;;
-border-radius: 8px;
-padding: 1px 10px 1px 10px;
-border: 1px solid #4D4D4D;
-}
-QComboBox QAbstractItemView{
-background-color:#4D4D4D;
-color:white;
-selection-background-color: rgb(56,117,215);
-}
-QComboBox::drop-down {
-subcontrol-origin: padding;
-subcontrol-position: top right;
-width: 20px;
-border-left-width: 1px;
-border-left-style: solid;
-border-top-right-radius: 3px;
-border-bottom-right-radius: 3px;
-border-left-color: #4D4D4D;
-}
-QComboBox::down-arrow{
-image: url(:/image/images/arrow_down.png);
-}
-QComboBox::down-arrow:pressed{
-position:relative;
-top:1px;
-left:1px;
-}
-</string>
+   <string notr="true"/>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
-   <property name="leftMargin">
+   <property name="spacing">
     <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>1</number>
    </property>
    <property name="topMargin">
-    <number>0</number>
+    <number>1</number>
    </property>
    <property name="rightMargin">
-    <number>0</number>
+    <number>1</number>
    </property>
    <property name="bottomMargin">
-    <number>0</number>
+    <number>1</number>
    </property>
    <item>
-    <widget class="QWidget" name="TitleBarWidget" native="true">
+    <widget class="QWidget" name="widget_title" native="true">
      <property name="minimumSize">
       <size>
        <width>0</width>
@@ -85,33 +59,45 @@ left:1px;
       </size>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
       <property name="topMargin">
-       <number>4</number>
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
       </property>
       <property name="bottomMargin">
-       <number>4</number>
+       <number>0</number>
       </property>
       <item>
-       <widget class="QLabel" name="label_title_icon">
+       <widget class="QLabel" name="lab_Ico">
         <property name="minimumSize">
          <size>
-          <width>25</width>
-          <height>25</height>
+          <width>30</width>
+          <height>30</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>25</width>
-          <height>25</height>
+          <width>30</width>
+          <height>30</height>
          </size>
         </property>
         <property name="text">
          <string/>
         </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label_title">
+       <widget class="QLabel" name="lab_Title">
         <property name="text">
          <string>系统设置</string>
         </property>
@@ -121,25 +107,40 @@ left:1px;
     </widget>
    </item>
    <item>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <property name="leftMargin">
-      <number>9</number>
-     </property>
-     <property name="topMargin">
-      <number>0</number>
-     </property>
-     <property name="rightMargin">
-      <number>9</number>
-     </property>
-     <property name="bottomMargin">
-      <number>0</number>
-     </property>
-     <item>
-      <widget class="QGroupBox" name="groupBox_3">
-       <property name="title">
-        <string>服务器网络设置</string>
-       </property>
-       <layout class="QGridLayout" name="gridLayout_3">
+    <widget class="QWidget" name="widget" native="true">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>服务器网络设置</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Line" name="line">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>1</height>
+           </size>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="gridLayout">
         <item row="0" column="0">
          <widget class="QLabel" name="label_11">
           <property name="minimumSize">
@@ -158,18 +159,6 @@ left:1px;
         </item>
         <item row="0" column="1">
          <widget class="QLineEdit" name="ServerIP">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>30</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>30</height>
-           </size>
-          </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
@@ -193,32 +182,45 @@ left:1px;
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>30</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>30</height>
-           </size>
-          </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
        </layout>
-      </widget>
-     </item>
-     <item>
-      <widget class="QGroupBox" name="groupBox">
-       <property name="title">
-        <string>本地网络设置</string>
-       </property>
-       <layout class="QGridLayout" name="gridLayout">
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>本地网络设置</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Line" name="line_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>1</height>
+           </size>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="gridLayout_2">
         <item row="0" column="0">
          <widget class="QLabel" name="label">
           <property name="text">
@@ -231,18 +233,6 @@ left:1px;
         </item>
         <item row="0" column="1">
          <widget class="QLineEdit" name="DevelopBoardIP">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>30</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>30</height>
-           </size>
-          </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
@@ -259,19 +249,7 @@ left:1px;
          </widget>
         </item>
         <item row="1" column="1">
-         <widget class="QLineEdit" name="DevelopBoardMask">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>30</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>30</height>
-           </size>
-          </property>
+         <widget class="QLineEdit" name="DevelopBoardGateway">
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
@@ -288,19 +266,7 @@ left:1px;
          </widget>
         </item>
         <item row="2" column="1">
-         <widget class="QLineEdit" name="DevelopBoardGateway">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>30</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>30</height>
-           </size>
-          </property>
+         <widget class="QLineEdit" name="DevelopBoardMask">
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
@@ -318,98 +284,61 @@ left:1px;
         </item>
         <item row="3" column="1">
          <widget class="QLineEdit" name="DevelopBoardDNS">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>30</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>30</height>
-           </size>
-          </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
        </layout>
-      </widget>
-     </item>
-     <item>
-      <spacer name="verticalSpacer">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>13</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
-       <property name="leftMargin">
-        <number>9</number>
-       </property>
-       <property name="topMargin">
-        <number>9</number>
-       </property>
-       <property name="rightMargin">
-        <number>9</number>
-       </property>
-       <property name="bottomMargin">
-        <number>9</number>
-       </property>
-       <item>
-        <spacer name="horizontalSpacer">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btnSave">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>101</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>保存</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btnClose">
-         <property name="minimumSize">
-          <size>
-           <width>101</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>关闭</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnSave">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>101</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>保存</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnClose">
+          <property name="minimumSize">
+           <size>
+            <width>101</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>关闭</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
    </item>
   </layout>
  </widget>

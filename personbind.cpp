@@ -11,6 +11,7 @@ PersonBind::PersonBind(QWidget *parent) :
     ui->setupUi(this);
     this->setWindowFlags(Qt::FramelessWindowHint);
     setAttribute(Qt::WA_DeleteOnClose);
+    IconHelper::Instance()->SetIcon(ui->lab_Ico, QChar(0xf1a5),14);
 
     manager = new QNetworkAccessManager(this);
     connect(manager,SIGNAL(finished(QNetworkReply*)),
@@ -36,14 +37,14 @@ void PersonBind::on_btnClose_clicked()
 
 void PersonBind::SetWindowTitle(QString title)
 {
-    ui->label_title->setText(title);
+    ui->lab_Title->setText(title);
 }
 
 void PersonBind::getFunctionType()
 {
     QUrl getFunctionType = QUrl(ServerIP + ":" + ServerListenPort + "/cgi-bin/authface/authface.cgi?{\"getFunctionType\":null}");
     reply = manager->get(QNetworkRequest(getFunctionType));
-    qDebug() << getFunctionType;
+//    qDebug() << getFunctionType;
 }
 
 void PersonBind::getBinding()
@@ -59,7 +60,7 @@ void PersonBind::getBinding()
     reply = manager->get(QNetworkRequest(getBinding));
     ui->BindTableWidget->clearContents();
     ui->BindTableWidget->setRowCount(0);
-    qDebug() << getBinding;
+//    qDebug() << getBinding;
 }
 
 void PersonBind::on_btnUnbind_clicked()
@@ -74,7 +75,7 @@ void PersonBind::on_btnUnbind_clicked()
     }
     QUrl delBinding = QUrl(QString(ServerIP + ":" + ServerListenPort + "/cgi-bin/authface/authface.cgi?{\"delBinding\":[\"CardNumber=%1\"]}").arg(ui->BindTableWidget->item(SelectedRowIndex,1)->text()));
     reply = manager->get(QNetworkRequest(delBinding));
-    qDebug() << delBinding;
+//    qDebug() << delBinding;
 
     SelectedRowIndex = -1;
 }
@@ -108,7 +109,7 @@ void PersonBind::on_btnBind_clicked()
     reply = manager->get(QNetworkRequest(addBinding));
     ui->SearchTableWidget->clearContents();
     ui->SearchTableWidget->setRowCount(0);
-    qDebug() << addBinding;
+//    qDebug() << addBinding;
 }
 
 void PersonBind::slotReplyFinished(QNetworkReply *reply)
@@ -116,7 +117,7 @@ void PersonBind::slotReplyFinished(QNetworkReply *reply)
     if(reply->error() == QNetworkReply::NoError){
         QTextCodec *codec = QTextCodec::codecForName("UTF-8");
         QString JsonData = codec->toUnicode(reply->readAll());
-        qDebug() << JsonData;
+//        qDebug() << JsonData;
 
         Json::Reader JsonReader;
         Json::Value JsonValue;
@@ -213,7 +214,7 @@ void PersonBind::slotSelectedContent(QList<QStringList> SelectedContent)
     ui->SearchTableWidget->setRowCount(0);
 
     if(!SelectedContent.isEmpty()){
-        tableWidgetSetting(ui->SearchTableWidget,SelectedContent.at(0),SelectedContent.at(0).size(),QHeaderView::Stretch,true);
+        tableWidgetSetting(ui->SearchTableWidget,SelectedContent.at(0),SelectedContent.at(0).size(),QHeaderView::Stretch,false);
 
         qint32 SearchTableWidgetRowIndex = 0;
         for(int i = 1; i < SelectedContent.size(); i++){
@@ -251,7 +252,7 @@ void PersonBind::tableWidgetSetting(QTableWidget *tableWidget, QStringList Horiz
     tableWidget->horizontalHeader()->setMovable(false);
 
     //设置交替行颜色选项
-    tableWidget->setAlternatingRowColors(true);
+//    tableWidget->setAlternatingRowColors(true);
 
     //使列完全填充并平分
     tableWidget->horizontalHeader()->setResizeMode(mode);
@@ -265,15 +266,12 @@ void PersonBind::tableWidgetSetting(QTableWidget *tableWidget, QStringList Horiz
     tableWidget->horizontalHeader()->setVisible(true);
     tableWidget->verticalHeader()->setVisible(isVisibleVerticalHeader);
 
-    //所有单元格设置字体和字体大小
-    tableWidget->setFont(QFont(tr("WenQuanYi Micro Hei"),14));
 
     //设置水平表头所有列的对齐方式和字体
     for(int i = 0; i < tableWidget->columnCount(); i++){
         QTableWidgetItem *horizontalHeaderItem =
                 tableWidget->horizontalHeaderItem(i);
         horizontalHeaderItem->setTextAlignment(Qt::AlignVCenter | Qt::AlignHCenter);
-        horizontalHeaderItem->setFont(QFont(tr("WenQuanYi Micro Hei"),14));
     }
 }
 
@@ -309,5 +307,6 @@ void PersonBind::on_FunctionTypeFilterComboBox_currentIndexChanged(const QString
     reply = manager->get(QNetworkRequest(getBinding));
     ui->BindTableWidget->clearContents();
     ui->BindTableWidget->setRowCount(0);
-    qDebug() << getBinding;
+//    qDebug() << getBinding;
+    SelectedRowIndex = -1;
 }

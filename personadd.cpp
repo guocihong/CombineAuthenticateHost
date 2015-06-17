@@ -11,7 +11,10 @@ PersonAdd::PersonAdd(QWidget *parent) :
     ui->setupUi(this);
     this->setWindowFlags(Qt::FramelessWindowHint);
     setAttribute(Qt::WA_DeleteOnClose);
-    ui->label_title->installEventFilter(this);
+    ui->lab_Title->installEventFilter(this);
+    IconHelper::Instance()->SetIcon(ui->lab_Ico, QChar(0xf1a5),14);
+
+    isOver = false;
 
     ServerIP = CommonSetting::ReadSettings("/bin/config.ini","ServerNetwork/IP");
     ServerListenPort = CommonSetting::ReadSettings("/bin/config.ini","ServerNetwork/PORT");
@@ -37,21 +40,24 @@ void PersonAdd::on_btnClose_clicked()
 
 void PersonAdd::SetWindowTitle(QString title)
 {
-    ui->label_title->setText(title);
+    ui->lab_Title->setText(title);
 }
 
 void PersonAdd::SetData(QString CardID)
 {
-    QUrl getPersonInfo = QUrl(QString(ServerIP + ":" + ServerListenPort + "/cgi-bin/authface/authface.cgi?{\"getPersonInfo\":[\"CardID=%1\"]}").arg(CardID));
-    reply = manager->get(QNetworkRequest(getPersonInfo));
-    type = PersonAdd::GetBasicInfo;
-    qDebug() << getPersonInfo;
+//    QUrl getPersonInfo = QUrl(QString(ServerIP + ":" + ServerListenPort + "/cgi-bin/authface/authface.cgi?{\"getPersonInfo\":[\"CardID=%1\"]}").arg(CardID));
+//    reply = manager->get(QNetworkRequest(getPersonInfo));
+//    type = PersonAdd::GetBasicInfo;
+//    qDebug() << getPersonInfo;
+
+    ui->CardID->setText(CardID);
+    on_btnQuery_clicked();
 }
 
 bool PersonAdd::eventFilter(QObject *obj, QEvent *event)
 {
     QMouseEvent *MouseEvent = static_cast<QMouseEvent*>(event);
-    if(obj == ui->label_title){
+    if(obj == ui->lab_Title){
         if(MouseEvent->buttons() == Qt::LeftButton){
             if(event->type() == QEvent::MouseButtonPress){
                 mousePressed = true;
@@ -77,7 +83,7 @@ void PersonAdd::getFunctionType()
     QUrl getFunctionType = QUrl(ServerIP + ":" + ServerListenPort + "/cgi-bin/authface/authface.cgi?{\"getFunctionType\":null}");
     reply = manager->get(QNetworkRequest(getFunctionType));
     type = PersonAdd::GetBasicInfo;
-    qDebug() << getFunctionType;
+//    qDebug() << getFunctionType;
 }
 
 void PersonAdd::on_btnQuery_clicked()
@@ -88,7 +94,7 @@ void PersonAdd::on_btnQuery_clicked()
         QUrl getPersonInfo = QUrl(QString(ServerIP + ":" + ServerListenPort + "/cgi-bin/authface/authface.cgi?{\"getPersonInfo\":[\"CardID=%1\"]}").arg(ui->CardID->text()));
         reply = manager->get(QNetworkRequest(getPersonInfo));
         type = PersonAdd::GetBasicInfo;
-        qDebug() << getPersonInfo;
+//        qDebug() << getPersonInfo;
     }else{
         ui->PersonName->clear();
         ui->Sex->clear();
@@ -114,7 +120,7 @@ void PersonAdd::slotReplyFinished(QNetworkReply *reply)
         if(type == PersonAdd::GetBasicInfo){
             QTextCodec *codec = QTextCodec::codecForName("UTF-8");
             QString JsonData = codec->toUnicode(reply->readAll());
-            qDebug() << JsonData;
+//            qDebug() << JsonData;
 
             Json::Reader JsonReader;
             Json::Value JsonValue;
@@ -127,6 +133,9 @@ void PersonAdd::slotReplyFinished(QNetworkReply *reply)
                     {
                         ui->FunctionTypeFilterComboBox->addItem(QString(FunctionTypeArray[i][1].asString().data()) + QString("(") + QString::number(FunctionTypeArray[i][0u].asUInt()) + QString(")"));
                     }
+                    connect(ui->FunctionTypeFilterComboBox,SIGNAL(currentIndexChanged(int)),this,SLOT(slotFunctionTypeFilterComboBoxCurrentIndexChanged(int)));
+
+                    isOver = true;
                 }
 
                 const Json::Value PersonInfoArray = JsonValue["PersonInfo"];
@@ -161,6 +170,9 @@ void PersonAdd::slotReplyFinished(QNetworkReply *reply)
                     reply->deleteLater();
 
                     ui->FunctionTypeFilterComboBox->setCurrentIndex(FunctionTypeID - 1);
+                    if(FunctionTypeID == 1){
+                        slotFunctionTypeFilterComboBoxCurrentIndexChanged(0);
+                    }
                     return;
                 }else if(PersonInfoArray.type() == Json::objectValue){
                     ui->PersonName->clear();
@@ -250,7 +262,7 @@ void PersonAdd::slotReplyFinished(QNetworkReply *reply)
     reply->deleteLater();
 }
 
-void PersonAdd::on_FunctionTypeFilterComboBox_currentIndexChanged(int index)
+void PersonAdd::slotFunctionTypeFilterComboBoxCurrentIndexChanged(int index)
 {
     ui->CardID->selectAll();
     for(qint8 i = 0; i < cb_list.size(); i++){
@@ -260,7 +272,7 @@ void PersonAdd::on_FunctionTypeFilterComboBox_currentIndexChanged(int index)
     QUrl getPersonType = QUrl(QString(ServerIP + ":" + ServerListenPort + "/cgi-bin/authface/authface.cgi?{\"getPersonType\":[%1]}").arg(ui->FunctionTypeFilterComboBox->currentIndex() + 1));
     reply = manager->get(QNetworkRequest(getPersonType));
     type = PersonAdd::GetBasicInfo;
-    qDebug() << getPersonType;
+//    qDebug() << getPersonType;
 }
 
 void PersonAdd::on_btnSave_clicked()
@@ -280,7 +292,7 @@ void PersonAdd::on_btnSave_clicked()
     QUrl setPerson = QUrl(QString(ServerIP + ":" + ServerListenPort + "/cgi-bin/authface/authface.cgi?{\"setPerson\":[\"PersonID=%1\",\"Role=%2\",\"Type=%3\",\"ValidPeriod=%4\"]}").arg(PersonID).arg(Role).arg(type_list.join(",")).arg(ValidPeriod));
     reply = manager->get(QNetworkRequest(setPerson));
     type = PersonAdd::GetBasicInfo;
-    qDebug() << setPerson;
+//    qDebug() << setPerson;
 }
 
 void PersonAdd::on_btnDownloadPic_clicked()
@@ -288,7 +300,7 @@ void PersonAdd::on_btnDownloadPic_clicked()
     if(!PersonPicUrl.isEmpty()){
         reply = manager->get(QNetworkRequest(PersonPicUrl));
         type = PersonAdd::GetPersonPic;
-        qDebug() << PersonPicUrl;
+//        qDebug() << PersonPicUrl;
         PersonPicUrl.clear();
     }
 }

@@ -1,18 +1,20 @@
 #include "mainform.h"
 #include "InputMethod/frminput.h"
+#include "app.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
     CommonSetting::SetUTF8Code();
-    CommonSetting::SetCustomStyle();
+    CommonSetting::SetCustomStyle(":/image/blue.css");
+    qApp->setFont(QFont(App::AppFontName,App::AppFontSize));
 
     QTranslator translator;
-    translator.load(":/qm/qt_zh_CN.qm");
+    translator.load(":/image/qt_zh_CN.qm");
     qApp->installTranslator(&translator);
 
-    frmInput::Instance()->Init("bottom", "black", 25);
+    frmInput::Instance()->Init("bottom", "blue", 20);
 
     system("/bin/UdpMulticastClient -qws &");
 

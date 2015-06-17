@@ -9,8 +9,8 @@ MainForm::MainForm(QWidget *parent) :
     ui(new Ui::MainForm)
 {
     ui->setupUi(this);
-    this->setWindowFlags(Qt::FramelessWindowHint);
-
+    this->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowSystemMenuHint);
+    this->setProperty("Form",true);
     ui->stackedWidget->setCurrentIndex(0);
 
     manager = new QNetworkAccessManager(this);
@@ -80,7 +80,7 @@ void MainForm::CreateCompanyManagerMenu()
     CompanyManagerMenu->setFixedWidth(ui->btnCompanyManager->width());
 
     CompanyListAction = CompanyManagerMenu->addAction(tr("单位列表"));
-    CompanyManagerMenu->addSeparator();
+//    CompanyManagerMenu->addSeparator();
     CompanyRegisterAction = CompanyManagerMenu->addAction(tr("单位注册"));
     CompanyEditAction = CompanyManagerMenu->addAction(tr("单位编辑"));
 
@@ -95,7 +95,7 @@ void MainForm::CreatePersonManagerMenu()
     PersonManagerMenu->setFixedWidth(ui->btnPersonManager->width());
 
     PersonListAction = PersonManagerMenu->addAction(tr("人员列表"));
-    PersonManagerMenu->addSeparator();
+//    PersonManagerMenu->addSeparator();
     PersonAddAction = PersonManagerMenu->addAction(tr("人员添加"));
     PersonEditAction = PersonManagerMenu->addAction(tr("人员编辑"));
 
@@ -110,10 +110,10 @@ void MainForm::CreateFrontManagerMenu()
     FrontManagerMenu->setFixedWidth(ui->btnFrontManager->width());
 
     DeviceStatusAction = FrontManagerMenu->addAction(tr("设备列表"));
-    FrontManagerMenu->addSeparator();
+//    FrontManagerMenu->addSeparator();
     DeviceAddAction = FrontManagerMenu->addAction(tr("设备添加"));
     DeviceEditAction = FrontManagerMenu->addAction(tr("设备编辑"));
-    FrontManagerMenu->addSeparator();
+//    FrontManagerMenu->addSeparator();
     PersonBindAction = FrontManagerMenu->addAction(tr("人员绑定"));
 
     connect(DeviceStatusAction,SIGNAL(triggered()),this,SLOT(slotShowDeviceStatus()));
@@ -176,6 +176,9 @@ void MainForm::slotPersonEdit()
     PersonAdd *person_edit = new PersonAdd;
     connect(person_edit,SIGNAL(signalControlStateEnable()),this,SLOT(slotControlStateEnable()));
     person_edit->SetWindowTitle(tr("人员编辑"));
+    while(!person_edit->isOver){
+        CommonSetting::Sleep(100);
+    }
     person_edit->SetData(ui->PersonMainInfoTableWidget->item(SelectedRowIndex,1)->text());
     person_edit->show();
 
@@ -248,7 +251,7 @@ void MainForm::getArea()
     QUrl getArea = QUrl(ServerIP + ":" + ServerListenPort + "/cgi-bin/authface/authface.cgi?{\"getArea\":null}");
     reply = manager->get(QNetworkRequest(getArea));
     type = MainForm::GetOtherInfo;
-    qDebug() << getArea;
+//    qDebug() << getArea;
 }
 
 void MainForm::getFunctionType()
@@ -256,7 +259,7 @@ void MainForm::getFunctionType()
     QUrl getFunctionType = QUrl(ServerIP + ":" + ServerListenPort + "/cgi-bin/authface/authface.cgi?{\"getFunctionType\":null}");
     reply = manager->get(QNetworkRequest(getFunctionType));
     type = MainForm::GetOtherInfo;
-    qDebug() << getFunctionType;
+//    qDebug() << getFunctionType;
 }
 
 void MainForm::getDateTime()
@@ -264,7 +267,7 @@ void MainForm::getDateTime()
     QUrl getDateTime = QUrl(ServerIP + ":" + ServerListenPort + "/cgi-bin/authface/authface.cgi?{\"getDateTime\":null}");
     reply = manager->get(QNetworkRequest(getDateTime));
     type = MainForm::GetOtherInfo;
-    qDebug() << getDateTime;
+//    qDebug() << getDateTime;
 }
 
 void MainForm::on_btnSearchCompanyInfo_clicked()
@@ -294,7 +297,7 @@ void MainForm::on_btnSearchCompanyInfo_clicked()
     type = MainForm::GetOtherInfo;
     ui->CompanyMainInfoTableWidget->clearContents();
     ui->CompanyMainInfoTableWidget->setRowCount(0);
-    qDebug() << getCompany;
+//    qDebug() << getCompany;
 }
 
 void MainForm::on_btnSearchPersonInfo_clicked()
@@ -326,7 +329,7 @@ void MainForm::on_btnSearchPersonInfo_clicked()
     type = MainForm::GetOtherInfo;
     ui->PersonMainInfoTableWidget->clearContents();
     ui->PersonMainInfoTableWidget->setRowCount(0);
-    qDebug() << getPersonInfo;
+//    qDebug() << getPersonInfo;
 }
 
 void MainForm::on_btnSearchDeviceInfo_clicked()
@@ -354,7 +357,7 @@ void MainForm::on_btnSearchDeviceInfo_clicked()
     type = MainForm::GetOtherInfo;
     ui->DeviceMainInfoTableWidget->clearContents();
     ui->DeviceMainInfoTableWidget->setRowCount(0);
-    qDebug() << getDevice;
+//    qDebug() << getDevice;
 }
 
 void MainForm::on_btnDeviceBind_clicked()
@@ -393,7 +396,7 @@ void MainForm::on_btnDeviceBind_clicked()
 
     reply = manager->get(QNetworkRequest(getDevice));
     type = MainForm::GetAllDeviceNumber;
-    qDebug() << getDevice;
+//    qDebug() << getDevice;
 }
 
 void MainForm::on_btnDeviceUnbind_clicked()
@@ -407,7 +410,7 @@ void MainForm::on_btnDeviceUnbind_clicked()
     }
     QUrl delBinding = QUrl(QString(ServerIP + ":" + ServerListenPort + "/cgi-bin/authface/authface.cgi?{\"delBinding\":[\"CardNumber=%1\"]}").arg(ui->PersonMainInfoTableWidget->item(SelectedRowIndex,1)->text()));
     reply = manager->get(QNetworkRequest(delBinding));
-    qDebug() << delBinding;
+//    qDebug() << delBinding;
 
     SelectedRowIndex = -1;
 }
@@ -435,7 +438,7 @@ void MainForm::on_btnRecordQuery_clicked()
     ui->RecordPersonInfoTableWidget->setRowCount(0);
     ui->RecordSubInfoTableWidget->setRowCount(0);
 
-    qDebug() << getMsgList;
+//    qDebug() << getMsgList;
 }
 
 void MainForm::slotReplyFinished(QNetworkReply *reply)
@@ -460,7 +463,7 @@ void MainForm::slotReplyFinished(QNetworkReply *reply)
             SelectedRowIndex = -1;
             reply = manager->get(QNetworkRequest(getPersonInfo));
             type = MainForm::GetPersonBasicInfo;
-            qDebug() << getPersonInfo;
+//            qDebug() << getPersonInfo;
             return;
         }else if(type == MainForm::GetPersonOldPic){
             QImage image;
@@ -475,7 +478,7 @@ void MainForm::slotReplyFinished(QNetworkReply *reply)
         }else if(type == MainForm::GetAllDeviceNumber){
             QTextCodec *codec = QTextCodec::codecForName("UTF-8");
             QString JsonData = codec->toUnicode(reply->readAll());
-            qDebug() << JsonData;
+//            qDebug() << JsonData;
 
             Json::Reader JsonReader;
             Json::Value JsonValue;
@@ -499,7 +502,7 @@ void MainForm::slotReplyFinished(QNetworkReply *reply)
             if(!DeviceNumberList.isEmpty()){
                 QUrl addBinding = QUrl(QString(ServerIP + ":" + ServerListenPort + "/cgi-bin/authface/authface.cgi?{\"addBinding\":[\"CardNumber=%1\",\"%2\"]}").arg(ui->PersonMainInfoTableWidget->item(SelectedRowIndex,1)->text()).arg(DeviceNumberList.join(",")));
                 reply = manager->get(QNetworkRequest(addBinding));
-                qDebug() << addBinding;
+//                qDebug() << addBinding;
             }
             type = MainForm::GetOtherInfo;
             SelectedRowIndex = -1;
@@ -507,7 +510,7 @@ void MainForm::slotReplyFinished(QNetworkReply *reply)
         }else{
             QTextCodec *codec = QTextCodec::codecForName("UTF-8");
             QString JsonData = codec->toUnicode(reply->readAll());
-            qDebug() << JsonData;
+//            qDebug() << JsonData;
 
             Json::Reader JsonReader;
             Json::Value JsonValue;
@@ -611,6 +614,7 @@ void MainForm::slotReplyFinished(QNetworkReply *reply)
                             ui->RecordPersonInfoTableWidget->setVerticalHeaderLabels(VerticalHeaderLabels);
                             tableWidgetSetting(ui->RecordPersonInfoTableWidget,QHeaderView::Stretch);
                             ui->RecordPersonInfoTableWidget->horizontalHeader()->setVisible(false);
+                            ui->RecordPersonInfoTableWidget->verticalHeader()->setVisible(true);
                         }else{
                             qint8 columnCount = HorizontalHeaderLabels.count() - 15;
                             ui->PersonMainInfoTableWidget->setColumnCount(columnCount);
@@ -836,7 +840,7 @@ void MainForm::tableWidgetSetting(QTableWidget *tableWidget, QHeaderView::Resize
     tableWidget->horizontalHeader()->setMovable(false);
 
     //设置交替行颜色选项
-    tableWidget->setAlternatingRowColors(true);
+//    tableWidget->setAlternatingRowColors(true);
 
     //使列完全填充并平分
     tableWidget->horizontalHeader()->setResizeMode(mode);
@@ -848,25 +852,19 @@ void MainForm::tableWidgetSetting(QTableWidget *tableWidget, QHeaderView::Resize
 
     //表格表头的显示与隐藏
     tableWidget->horizontalHeader()->setVisible(true);
-    tableWidget->verticalHeader()->setVisible(true);
-
-    //所有单元格设置字体和字体大小
-    tableWidget->setFont(QFont(tr("WenQuanYi Micro Hei"),14));
+    tableWidget->verticalHeader()->setVisible(false);
 
     //设置水平表头所有列的对齐方式和字体
     if(type == MainForm::GetPersonBasicInfo){
         for(int i = 0; i < tableWidget->rowCount(); i++){
             QTableWidgetItem *verticalHeaderItem =
                     tableWidget->verticalHeaderItem(i);
-            //        horizontalHeaderItem->setTextAlignment(Qt::AlignVCenter | Qt::AlignHCenter);
-            verticalHeaderItem->setFont(QFont(tr("WenQuanYi Micro Hei"),14));
         }
     }else{
         for(int i = 0; i < tableWidget->columnCount(); i++){
             QTableWidgetItem *horizontalHeaderItem =
                     tableWidget->horizontalHeaderItem(i);
-            //        horizontalHeaderItem->setTextAlignment(Qt::AlignVCenter | Qt::AlignHCenter);
-            horizontalHeaderItem->setFont(QFont(tr("WenQuanYi Micro Hei"),14));
+
         }
     }
 }
@@ -897,7 +895,7 @@ void MainForm::on_RecordMainInfoTableWidget_cellClicked(int row, int column)
 
     reply = manager->get(QNetworkRequest(getMsgInfo));
     type = MainForm::GetOtherInfo;
-    qDebug() << getMsgInfo;
+//    qDebug() << getMsgInfo;
 }
 
 void MainForm::on_RecordSubInfoTableWidget_cellClicked(int row, int column)
@@ -907,7 +905,7 @@ void MainForm::on_RecordSubInfoTableWidget_cellClicked(int row, int column)
     QUrl pic_new_url = ui->RecordSubInfoTableWidget->item(row,3)->text();
     reply = manager->get(QNetworkRequest(pic_new_url));
     type = MainForm::GetPersonNewPic;
-    qDebug() << pic_new_url;
+//    qDebug() << pic_new_url;
 }
 
 void MainForm::on_PersonMainInfoTableWidget_cellClicked(int row, int column)
@@ -944,7 +942,7 @@ void MainForm::slotUpdateSystemDate()
 void MainForm::slotControlStateEnable()
 {
     QList<QToolButton *> allPButtons =
-            ui->TitleBarWidget->findChildren<QToolButton *>();
+            ui->widget_title->findChildren<QToolButton *>();
     for(qint8 i = 0; i < allPButtons.size(); i++){
         allPButtons.at(i)->setEnabled(true);
     }
@@ -959,7 +957,7 @@ void MainForm::slotControlStateEnable()
 void MainForm::slotControlStateDisable()
 {
     QList<QToolButton *> allPButtons =
-            ui->TitleBarWidget->findChildren<QToolButton *>();
+            ui->widget_title->findChildren<QToolButton *>();
     for(qint8 i = 0; i < allPButtons.size(); i++){
         allPButtons.at(i)->setDisabled(true);
     }
